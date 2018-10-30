@@ -52,10 +52,8 @@ if len(files)==0:
     print("No sample count matrix found!")
     exit(1)
 
-QC_table=open("QC/QCTable.csv", "w")
-QC_table.write("Sample,TotalReads,polyARatio,UniqueMap,MultiMap,UnMap,"
-                      +"Coding,UTR,Intronic,Intergenic,Nuclei#(PF),UsefulReads,UMI,Duplication\n")
-
+QC_table=open("Reports/QCTable.csv", "w")
+QC_table.write("Sample,TotalReads,polyARatio,UniqueMap,MultiMap,UnMap,Coding,UTR,Intronic,Intergenic,Nuclei#(PF),UsefulReads,UMI,Duplication\n")
 
 for file in files:
     sample_name=file.replace("DGE/","").replace(".counts.tsv","")
@@ -77,9 +75,6 @@ for file in files:
     gene_filter=np.array((nonmito_gene_number>args.gene_number_low) & (nonmito_gene_number<args.gene_number_high))
 
     filter=np.array(mito_filter & umi_filter & gene_filter)
-
-    #barcode_passfilter=barcode_list[filter]
-    #recovered_nuclei_number=len(barcode_passfilter)
 
     if np.sum(filter)>0:
         recovered_nuclei_number=np.sum(filter)
@@ -117,7 +112,7 @@ for file in files:
             print(sample_name+" log file not found!")
             exit(1)
 
-    alignment_log="QC/"+sample_name+".Log.final.out"
+    alignment_log="Reports/"+sample_name+".Log.final.out"
     if not os.path.isfile(alignment_log):
         print(sample_name+" alignment log file not found!")
         exit(1)
