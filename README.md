@@ -1,4 +1,4 @@
 # Dropseq_pipeline
 
-#Dropseq preprocessing Pipeline
-#Dropseq barcode filtering and QC Pipeline
+1.Dropseq preprocessing Pipeline
+2.Dropseq barcode filtering and QC Pipeline
