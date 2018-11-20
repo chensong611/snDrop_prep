@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dropseq_dir=bin
+dropseq_dir=
 star_dir=
 picard_dir=
 ref_dir=
