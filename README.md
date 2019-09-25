@@ -1,4 +1,4 @@
-# snDropseq_pipeline
+# snDrop_preprocessing
 
 1. Dropseq preprocessing Pipeline:
    *  dropseq_prep.sh
